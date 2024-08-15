@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImpersonateController;
 use App\Http\Controllers\Landing\LandingPageController;
 use App\Http\Controllers\Landing\NewsController;
+use App\Http\Controllers\Travel\TravelController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -60,3 +61,12 @@ Route::prefix('chart-data')->group(function () {
     Route::get('approv-daerah-prodi', [AdminProdiController::class, 'getProvinsiApprovedStats']);
     Route::get('approv-lulus-prodi', [AdminProdiController::class, 'getMatakuliahStats']);
 });
+
+// Travel
+Route::view("/data-travel", "pages.Travel.data_travel")->name("data_travel");
+Route::view("/create-travel", "pages.Travel.create_travel")->name("create_travel");
+Route::view("/create-penumpang", "pages.Travel.create_penumpang")->name("create_penumpang");
+
+// Route::get('/data-travel', [TravelController::class, 'index'])->name('index');
+// Route::post('/create-travel', [TravelController::class, 'create'])->name('create');
+
